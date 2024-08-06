@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "rctab_models"
+version = "0.1.0"
+description = ""
+authors = ["Iain-S <25081046+Iain-S@users.noreply.github.com >"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+pylint = "^3.2.6"
+isort = "^5.13.2"
+mypy = "^1.11.1"
+pymarkdownlnt = "^0.9.22"
+pylint-absolute-imports = "^1.0.1"
+pydocstyle = "^6.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
