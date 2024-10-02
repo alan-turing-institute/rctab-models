@@ -86,6 +86,8 @@ class AllUsage(BaseModel):
     """A wrapper for a list of Usage objects."""
 
     usage_list: List[Usage]
+    start_date: datetime.date
+    end_date: datetime.date
 
 
 class CMUsage(HashBaseModel):
