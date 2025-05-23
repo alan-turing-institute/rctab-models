@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "rctab_models"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Iain-S <25081046+Iain-S@users.noreply.github.com >"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-pydantic = "^2.8.2"
+pydantic = "^2.11.5"
 
 
 [tool.poetry.group.dev.dependencies]
