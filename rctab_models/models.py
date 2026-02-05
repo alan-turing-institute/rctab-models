@@ -165,6 +165,7 @@ class SubscriptionDetails(HashBaseModel):
     """A summary of a subscription."""
 
     subscription_id: UUID
+    sub_id: UUID
     name: Optional[str] = None
     role_assignments: Optional[Tuple[RoleAssignment, ...]] = None
     status: Optional[SubscriptionState] = None
@@ -189,7 +190,7 @@ DEFAULT_CURRENCY = "GBP"
 class Allocation(BaseModel):
     """An amount that a subscription can spend from an approved budget."""
 
-    sub_id: UUID
+    subscription: tuple[UUID, None] | tuple[None, str]
     ticket: str
     amount: float
     currency: str = DEFAULT_CURRENCY
@@ -204,10 +205,9 @@ class AllocationListItem(BaseModel):
     time_created: datetime.datetime
 
 
-class Approval(BaseModel):
+class BaseApproval(BaseModel):
     """An amount that a subscription can spend in a given time period."""
 
-    sub_id: UUID
     ticket: str
     amount: float
     currency: str = DEFAULT_CURRENCY
@@ -215,6 +215,18 @@ class Approval(BaseModel):
     date_from: datetime.date
     date_to: datetime.date
     force: bool = False
+
+
+class Approval(BaseApproval):
+    """An Approval with a subscription ID."""
+
+    sub_id: UUID
+
+
+class NameApproval(BaseApproval):
+    """An Approval with a subscription name."""
+
+    sub_name: str
 
 
 class ApprovalListItem(BaseModel):
@@ -231,7 +243,7 @@ class ApprovalListItem(BaseModel):
 class Finance(BaseModel):
     """An amount that can be billed to finance_code in a given time period."""
 
-    subscription_id: UUID
+    subscription: tuple[UUID, None] | tuple[None, str]
     ticket: str
     amount: float
     priority: int
@@ -262,7 +274,7 @@ class CostRecovery(BaseModel):
     """Costs that should, be recovered from finance_code."""
 
     finance_id: int
-    subscription_id: UUID
+    subscription: tuple[UUID, None] | tuple[None, str]
     month: datetime.date
     finance_code: str
     amount: float
