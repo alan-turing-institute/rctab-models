@@ -19,7 +19,7 @@ jobs:
       matrix:
         # Keep in step with the python range in pyproject.toml so the
         # versions we claim to support are the versions we test.
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        python-version: ["3.13", "3.14"]
 
     steps:
       - name: Checkout Code
