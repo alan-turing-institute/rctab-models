@@ -542,21 +542,6 @@ spelling = ["pyenchant (>=3.2,<4.0)"]
 testutils = ["gitpython (>3)"]
 
 [[package]]
-name = "pylint-absolute-imports"
-version = "1.1.0"
-description = "Pylint plugin which adds linter error for relatives imports.Read more about imports at https://peps.python.org/pep-0008/#imports"
-optional = false
-python-versions = "*"
-groups = ["dev"]
-files = [
-    {file = "pylint_absolute_imports-1.1.0-py3-none-any.whl", hash = "sha256:3fa7b73481c50cb7e7892d5eeaecf8108ad0ed06d9a545b5c620d20250a1f727"},
-    {file = "pylint_absolute_imports-1.1.0.tar.gz", hash = "sha256:3ea2bb868626c4662b76cb84d541af4e4cc4a355872fa28def72ad4439b31717"},
-]
-
-[package.dependencies]
-pylint = ">=2.5.0,<4"
-
-[[package]]
 name = "pymarkdownlnt"
 version = "0.9.22"
 description = "A GitHub Flavored Markdown compliant Markdown linter."
@@ -801,4 +786,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.13"
-content-hash = "6179b283ab91927419665220ebfd326847fe095e2bbdb14561020327e9ae47f4"
+content-hash = "f7a703040b4ffc265abcfe84a151f84cd59ecd6fdcf7d25bdcdd594bb7c6397a"
