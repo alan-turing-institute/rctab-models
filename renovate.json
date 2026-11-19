@@ -8,10 +8,6 @@
   "timezone": "Europe/London",
   "labels": ["dependencies"],
   "minimumReleaseAge": "3 days",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true
-  },
   "pre-commit": {
     "enabled": true
   },
@@ -24,6 +20,12 @@
       "matchManagers": ["poetry"],
       "matchDepTypes": ["dependencies"],
       "rangeStrategy": "widen"
+    },
+    {
+      "description": "Dev tools are pinned exactly in pyproject.toml (there is no lock file), so keep them pinned",
+      "matchManagers": ["poetry"],
+      "matchDepTypes": ["dev"],
+      "rangeStrategy": "pin"
     },
     {
       "description": "Automerge low-risk updates once CI passes",
