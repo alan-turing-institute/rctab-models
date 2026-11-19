@@ -41,6 +41,13 @@
       "description": "One PR for CI and pre-commit tooling",
       "matchManagers": ["github-actions", "pre-commit"],
       "groupName": "ci tooling"
+    },
+    {
+      "description": "Python version bumps are deliberate: own PR, approved from the Dependency Dashboard, never automerged",
+      "matchDepNames": ["python"],
+      "groupName": "python",
+      "automerge": false,
+      "dependencyDashboardApproval": true
     }
   ]
 }

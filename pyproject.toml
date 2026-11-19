@@ -16,7 +16,6 @@ pylint = "^3.2.6"
 isort = "^5.13.2"
 mypy = "^1.11.1"
 pymarkdownlnt = "^0.9.22"
-pylint-absolute-imports = "^1.0.1"
 pydocstyle = "^6.3.0"
 pytest = "^9.2.0"
 
