@@ -11,13 +11,15 @@ pydantic = "^2.11.5"
 
 
 [tool.poetry.group.dev.dependencies]
-black = "^26.0.0"
-pylint = "^4.0.0"
-isort = "^9.0.0"
-mypy = "^2.0.0"
-pymarkdownlnt = "^0.9.22"
-pydocstyle = "^6.3.0"
-pytest = "^9.2.0"
+# Exact pins: with no lock file, Renovate bumps these in PRs so that new
+# linter releases can't break CI unannounced.
+black = "26.10.1"
+pylint = "4.1.4"
+isort = "9.0.2"
+mypy = "2.4.1"
+pymarkdownlnt = "0.9.42"
+pydocstyle = "6.3.0"
+pytest = "9.2.0"
 
 [build-system]
 requires = ["poetry-core"]

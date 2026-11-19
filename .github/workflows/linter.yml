@@ -32,17 +32,6 @@ jobs:
       - name: Configure poetry
         run: poetry config virtualenvs.in-project true
 
-      - name: Set up cache
-        uses: actions/cache@v6
-        id: cache
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.full-python-version.outputs.version }}-${{ hashFiles('**/poetry.lock') }}
-
-      - name: Check poetry.lock consistency
-        shell: bash
-        run: poetry check --lock
-
       - name: Install dependencies
         run: poetry install --all-extras
 
